@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <!--you're practicing in the HEAD only for ease of walkthrough.
+    usually, don't put your JS here-->
+
+    <!--you will see JS errors in the browser console. f12 or rightclick-inspect-->
+
+    <!--<script type="text/javascript">
+        //alert('Hello');
+
+        var generateButton = document.getElementById('generate-fortune');
+        generateButton.onclick = function () {
+            alert('Hello');
+        }
+
+    </script>-->
+
+</head>
+<body>
+    <h1>You should see this text. It's to make sure the page itself works.</h1>
+
+    <!--you started down here-->
+    <!--then moved up to js above-->
+    <!--well actually, it didn't work in the head
+    because it started running before the page
+    so we moved it into the body
+    there are advanced ways to make it work in the head tho-->
+
+    <div id="fortune">
+        <!--fortune goes here-->
+    </div>
+
+    <input type="button" id="generate-fortune" value="Learn your fortune"/>
+
+    <script type="text/javascript">
+        //alert('Hello'); //that's a good thing to use just to test js
+
+        var generateButton = document.getElementById('generate-fortune');
+        generateButton.onclick = function () {
+            //alert('Hello');
+            var fortuneHolder = document.getElementById('fortune');
+            var fortunes = ["bad", "good", "adequate"];
+            var randomIndex = Math.round(Math.random() * 2);
+            //that last line does two things: random generates between 0 and 1, times 2
+            //then rounds to nearest whole number
+            //that's to produce results of 0, 1, 2 to align with 3 indexes of array
+            //even better would be (fortunes.length -1) instead of 2
+
+            //fortuneHolder.innerHTML = 'Funny fortune goes here.';
+
+            fortuneHolder.innerHTML = fortunes[randomIndex];
+        }
+
+    </script>
+
+</body>
+</html>
